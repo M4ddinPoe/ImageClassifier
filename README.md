@@ -7,6 +7,12 @@ A simple image classification neural network
 - https://www.tensorflow.org/
 - https://keras.io/
 
+```
+pip install keras
+pip install tensorflow
+pip install pillow
+```
+
 ### Create test and training set
 copy your images to the following folder structure
 

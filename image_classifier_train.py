@@ -1,9 +1,4 @@
 import classifier
-from keras.models import Sequential
-from keras.layers import Convolution2D
-from keras.layers import MaxPooling2D
-from keras.layers import Flatten
-from keras.layers import Dense
 from keras.callbacks import ModelCheckpoint
 from keras.preprocessing.image import ImageDataGenerator
 
@@ -31,9 +26,7 @@ test_set = test_datagen.flow_from_directory('dataset/test_set',
                                             batch_size = 32,
                                             class_mode = 'binary')
 
-classifier.fit_generator(training_set,
-                         samples_per_epoch = 8000,
-                         nb_epoch = 25,
-                         validation_data = test_set,
-                         nb_val_samples = 2000,  
-                         callbacks=callbacks_list)
+classifier.fit(x = training_set,
+               validation_data=test_set,
+               epochs = 25,
+               callbacks=callbacks_list)
